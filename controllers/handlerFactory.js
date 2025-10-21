@@ -93,11 +93,10 @@ exports.deleteOne = Model =>
 // ---------------- DELETE ALL ----------------
 exports.deleteAll = Model =>
   catchAsync(async (req, res, next) => {
-    // Use delete instead of truncate to respect foreign key constraints
     const count = await Model.destroy({
       where: {},
-      truncate: false, // Don't use truncate as it violates foreign key constraints
-      cascade: true, // This will attempt to delete related records if cascade is set up in models
+      truncate: false,
+      cascade: true, 
     });
 
     res.status(200).json({
@@ -105,3 +104,4 @@ exports.deleteAll = Model =>
       deletedCount: count,
     });
   });
+
