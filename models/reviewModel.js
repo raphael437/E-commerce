@@ -1,23 +1,22 @@
 const Sequelize = require('sequelize');
-const sequelize = require('../config/db'); // Fixed path
+const sequelize = require('../config/db'); 
 
 const Review = sequelize.define('Review', {
   id: {
-    type: Sequelize.INTEGER, // Fixed spelling
+    type: Sequelize.INTEGER, 
     autoIncrement: true,
     primaryKey: true,
     allowNull: false,
   },
   productId: {
-    type: Sequelize.INTEGER, // Should be INTEGER to match Product id
+    type: Sequelize.INTEGER,
     allowNull: false,
     references: {
-      model: 'Products', // This references the Products table
+      model: 'Products',
       key: 'id',
     },
   },
   userId: {
-    // Add userId to track who wrote the review
     type: Sequelize.INTEGER,
     allowNull: false,
     references: {
@@ -26,7 +25,6 @@ const Review = sequelize.define('Review', {
     },
   },
   rating: {
-    // Consider adding a rating field
     type: Sequelize.INTEGER,
     allowNull: false,
     validate: {
@@ -41,3 +39,4 @@ const Review = sequelize.define('Review', {
 });
 
 module.exports = Review;
+
