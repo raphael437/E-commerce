@@ -31,7 +31,7 @@ const Order = sequelize.define('Order', {
     defaultValue: 'NEW',
   },
   trackingNumber: { type: Sequilize.STRING, unique: true },
-  labelBase64: { type: Sequilize.TEXT }, // DHL may return base64 PDF
+  labelBase64: { type: Sequilize.TEXT }, 
 
   // Optional address fields (simplified)
   shipCountry: { type: Sequilize.STRING, defaultValue: 'US' },
@@ -41,3 +41,4 @@ const Order = sequelize.define('Order', {
 });
 
 module.exports = Order;
+
