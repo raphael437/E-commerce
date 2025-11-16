@@ -33,7 +33,6 @@ const Order = sequelize.define('Order', {
   trackingNumber: { type: Sequilize.STRING, unique: true },
   labelBase64: { type: Sequilize.TEXT }, 
 
-  // Optional address fields (simplified)
   shipCountry: { type: Sequilize.STRING, defaultValue: 'US' },
   shipCity: { type: Sequilize.STRING, allowNull: true },
   shipPostalCode: { type: Sequilize.STRING, allowNull: true },
@@ -41,4 +40,5 @@ const Order = sequelize.define('Order', {
 });
 
 module.exports = Order;
+
 
