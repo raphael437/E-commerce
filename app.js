@@ -32,7 +32,7 @@ const orderRouter = require('./routers/orderRouter');
 const productRouter = require('./routers/productRouter');
 const reviewRouter = require('./routers/reviewRouter');
 const cartRouter = require('./routers/cartRouter');
-const agentRouter = require('./routers/agentRouter'); // Added agent router
+const agentRouter = require('./routers/agentRouter'); 
 
 const passport = require('./config/passport');
 
@@ -74,7 +74,7 @@ app.set('strict routing', true);
 // 10. Initialize passport
 app.use(passport.initialize());
 
-// Sequelize associations (these are just model definitions, not middleware)
+// Sequelize associations 
 User.hasMany(Product, { foreignKey: 'userId' });
 Product.belongsTo(User, { foreignKey: 'userId' });
 
@@ -127,3 +127,4 @@ console.log('Mounted agent router');
 app.use(globalErrorHandler);
 
 module.exports = app;
+
